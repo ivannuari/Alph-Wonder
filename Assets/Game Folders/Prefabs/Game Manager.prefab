@@ -1,0 +1,180 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6430631841311611055
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3313505943746498604}
+  - component: {fileID: 738018039637811767}
+  - component: {fileID: 226991715983643306}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3313505943746498604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6430631841311611055}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &738018039637811767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6430631841311611055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67a03f0cc85a0ca42ae940845ad9f88f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  currentState: 0
+  levelData1:
+    saveData:
+    - level: 0
+      star: 0
+    - level: 0
+      star: 0
+    - level: 0
+      star: 0
+    - level: 0
+      star: 0
+    - level: 0
+      star: 0
+    - level: 0
+      star: 0
+    - level: 0
+      star: 0
+    - level: 0
+      star: 0
+  levelData2:
+    saveData:
+    - level: 0
+      star: 0
+    - level: 1
+      star: 0
+    - level: 2
+      star: 0
+    - level: 3
+      star: 0
+    - level: 4
+      star: 0
+    - level: 5
+      star: 0
+    - level: 6
+      star: 0
+    - level: 7
+      star: 0
+    - level: 8
+      star: 0
+    - level: 9
+      star: 0
+    - level: 10
+      star: 0
+    - level: 11
+      star: 0
+    - level: 12
+      star: 0
+    - level: 13
+      star: 0
+    - level: 14
+      star: 0
+    - level: 15
+      star: 0
+    - level: 16
+      star: 0
+    - level: 17
+      star: 0
+    - level: 18
+      star: 0
+    - level: 19
+      star: 0
+    - level: 20
+      star: 0
+    - level: 21
+      star: 0
+    - level: 22
+      star: 0
+    - level: 23
+      star: 0
+    - level: 0
+      star: 0
+    - level: 25
+      star: 0
+  levelData3:
+    saveData:
+    - level: 0
+      star: 0
+    - level: 0
+      star: 0
+    - level: 0
+      star: 0
+    - level: 0
+      star: 0
+    - level: 0
+      star: 0
+    - level: 0
+      star: 0
+    - level: 0
+      star: 0
+    - level: 0
+      star: 0
+--- !u!114 &226991715983643306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6430631841311611055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6934f67e1f678cd49bc6e74446d012e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  allSounds:
+  - soundName: BGM
+    soundClip: {fileID: 8300000, guid: 77e14a044efb3484995cb7faefc6d63d, type: 3}
+    isLoop: 1
+    source: {fileID: 0}
+  - soundName: button
+    soundClip: {fileID: 8300000, guid: e731aae28d7ef49e1a76eca2a3c62500, type: 3}
+    isLoop: 0
+    source: {fileID: 0}
+  - soundName: Zonk
+    soundClip: {fileID: 8300000, guid: bfb7451e951e04102acf753d1c02abe2, type: 3}
+    isLoop: 0
+    source: {fileID: 0}
+  - soundName: Correct
+    soundClip: {fileID: 8300000, guid: f6310e3f95f1e4f64a5926a4f996d7ee, type: 3}
+    isLoop: 0
+    source: {fileID: 0}
+  - soundName: Miss
+    soundClip: {fileID: 8300000, guid: 99c975b2447e7482da4871615d156edf, type: 3}
+    isLoop: 0
+    source: {fileID: 0}
+  - soundName: Game Over
+    soundClip: {fileID: 8300000, guid: 95e9957eb40064935a54aaca8ca04c01, type: 3}
+    isLoop: 0
+    source: {fileID: 0}
+  - soundName: Star
+    soundClip: {fileID: 8300000, guid: 46c880c6bbf0c4055a54a38d11eb2b4b, type: 3}
+    isLoop: 0
+    source: {fileID: 0}
+  isBgmPlayed: 0
