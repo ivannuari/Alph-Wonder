@@ -1,6 +1,8 @@
 using GaweDeweStudio;
 using System;
+using Unity.VectorGraphics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CanvasManager : MonoBehaviour
 {
@@ -15,6 +17,12 @@ public class CanvasManager : MonoBehaviour
         if (!GameManager.Instance.GetSound().IsBgmPlay())
         {
             GameManager.Instance.GetSound().PlaySound("BGM");
+        }
+
+        UnityEngine.SceneManagement.Scene s = SceneManager.GetActiveScene();
+        if(s.name == "Main Menu" && GameManager.Instance.isFromGame)
+        {
+            ChangePage(PageName.SelectLevel);
         }
     }
 

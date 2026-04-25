@@ -98,6 +98,15 @@ public class Level3Controller : MonoBehaviour
     {
         return level;
     }
+
+    public void ResetSoal()
+    {
+        poin = 0;
+        foreach (var item in allSlots)
+        {
+            item.ResetSoal();
+        }
+    }
 }
 
 

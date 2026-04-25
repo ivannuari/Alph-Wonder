@@ -17,7 +17,11 @@ public class Game2Page : Page
         base.Start();
         Level2Controller.Instance.OnScoreUpdated += Instance_OnScoreUpdated;
         Level2Controller.Instance.OnHealthUpdated += Instance_OnHealthUpdated;
-        backButton.onClick.AddListener(() => GameManager.Instance.ChangeState(GameState.Level2));
+        backButton.onClick.AddListener(() =>
+        {
+            Level2Controller.Instance.StopGame();
+            GameManager.Instance.ChangeState(GameState.Level2);
+        });
     }
 
     protected override void OnDestroy()

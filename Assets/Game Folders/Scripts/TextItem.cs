@@ -11,6 +11,21 @@ public class TextItem : MonoBehaviour
     public float fallSpeed;
     private SpriteRenderer _rend;
 
+    private void OnEnable()
+    {
+        Level2Controller.Instance.OnGameStopped += Instance_OnGameStopped;
+    }
+
+    private void OnDisable()
+    {
+        Level2Controller.Instance.OnGameStopped -= Instance_OnGameStopped;
+    }
+
+    private void Instance_OnGameStopped()
+    {
+        Destroy(gameObject);
+    }
+
     public void Setup(Sprite gambar, bool bomb, bool wrong)
     {
         isBomb = bomb;

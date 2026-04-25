@@ -8,6 +8,8 @@ public class DropSlot : MonoBehaviour, IDropHandler
     public LetterColor slotColor;
     [SerializeField] private Image colorImage;
 
+    private GameObject letterObj;
+
     public void Setup(LetterColor color)
     {
         slotColor = color;
@@ -52,6 +54,8 @@ public class DropSlot : MonoBehaviour, IDropHandler
             letterRect.anchoredPosition = Vector2.zero;
             letterRect.localScale = Vector3.one;
 
+            letterObj = letterRect.gameObject;
+
             // 🔥 play animasi
             letter.PlayCorrectAnimation();
             GameManager.Instance.GetSound().PlaySound("Correct");
@@ -66,5 +70,10 @@ public class DropSlot : MonoBehaviour, IDropHandler
         {
             letter.ReturnToStart();
         }
+    }
+
+    public void ResetSoal()
+    {
+        Destroy(letterObj);
     }
 }

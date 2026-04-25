@@ -105,6 +105,11 @@ public class Level1Controller : MonoBehaviour
         ClearLines();
     }
 
+    public void ResetSoal()
+    {
+        allJawabans.Clear();
+    }
+
     public void ClearLines()
     {
         GetComponent<LineDrawer>().ClearLines();

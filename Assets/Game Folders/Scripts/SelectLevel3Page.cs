@@ -1,5 +1,6 @@
 using GaweDeweStudio;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SelectLevel3Page : Page
@@ -11,6 +12,11 @@ public class SelectLevel3Page : Page
     protected override void Start()
     {
         base.Start();
+        backButton.onClick.AddListener(() =>
+        {
+            SceneManager.LoadSceneAsync("Main Menu");
+        });
+
         var data = GameManager.Instance.levelData3;
 
         for (int i = 0; i < allLevelCard.Length; i++)

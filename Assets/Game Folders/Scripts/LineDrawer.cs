@@ -119,5 +119,6 @@ public class LineDrawer : MonoBehaviour
         {
             Destroy(item.gameObject);
         }
+        allLines.Clear();
     }
 }

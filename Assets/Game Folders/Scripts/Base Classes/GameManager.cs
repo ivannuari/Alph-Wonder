@@ -12,6 +12,8 @@ namespace GaweDeweStudio
         public LevelData2 levelData2;
         public LevelData3 levelData3;
 
+        public bool isFromGame = false;
+
         private AudioManager _sound;
 
         public delegate void GameStateDelegate(GameState newState);

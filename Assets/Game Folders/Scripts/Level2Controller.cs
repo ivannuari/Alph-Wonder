@@ -30,6 +30,7 @@ public class Level2Controller : MonoBehaviour
 
     public event Action<int> OnScoreUpdated;
     public event Action<int> OnHealthUpdated;
+    public event Action OnGameStopped;
 
     private void Awake()
     {
@@ -65,7 +66,14 @@ public class Level2Controller : MonoBehaviour
 
         if(newState == GameState.Result)
         {
+            isPlaying = false;
             StopCoroutine(routine);
+        }
+
+        if(newState == GameState.Level2)
+        {
+            isPlaying = false;
+            if (routine != null) { StopCoroutine(routine); }
         }
     }
 
@@ -113,6 +121,8 @@ public class Level2Controller : MonoBehaviour
         score++;
         OnScoreUpdated?.Invoke(score);
 
+        GetComponent<AlphabetSound>().GetSound(currentLevel);
+
         if(score >= 30)
         {
             GameManager.Instance.ChangeState(GameState.Result);
@@ -128,6 +138,11 @@ public class Level2Controller : MonoBehaviour
         {
             GameManager.Instance.ChangeState(GameState.Result);
         }
+    }
+
+    public void StopGame()
+    {
+        OnGameStopped?.Invoke();
     }
 
     public Sprite GetTitleImage()
@@ -148,5 +163,11 @@ public class Level2Controller : MonoBehaviour
     public int GetLevel()
     {
         return currentLevel;
+    }
+
+    public void ResetSoal()
+    {
+        score = 0;
+        health = 4;
     }
 }

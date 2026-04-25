@@ -2,7 +2,6 @@ using GaweDeweStudio;
 using System;
 using System.Collections;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -24,22 +23,54 @@ public class ResultPage : Page
     protected override void Start()
     {
         base.Start();
-        menuButton.onClick.AddListener(() => SceneManager.LoadSceneAsync("Main Menu"));
+        //menuButton.onClick.AddListener(() => SceneManager.LoadSceneAsync("Main Menu"));
 
-        if(level1)
+        selectLevelButton.onClick.AddListener(() =>
         {
-            selectLevelButton.onClick.AddListener(()=> GameManager.Instance.ChangeState(GameState.Level1));
-        }
-        
-        if (level2)
-        {
-            selectLevelButton.onClick.AddListener(() => GameManager.Instance.ChangeState(GameState.Level2));
-        }
+            if(level1)
+            {
+                GameManager.Instance.ChangeState(GameState.Level1);
+            }
+            if(level2)
+            {
+                GameManager.Instance.ChangeState(GameState.Level2);
+            }
+            if(level3)
+            {
+                GameManager.Instance.ChangeState(GameState.Level3);
+            }
+        });
 
-        if(level3)
+        menuButton.onClick.AddListener(() =>
         {
-            selectLevelButton.onClick.AddListener(() => GameManager.Instance.ChangeState(GameState.Level3));
-        }
+            if (level1) 
+            {
+                int level = Level1Controller.Instance.GetLevel();
+                level++;
+                if (level > 7) { return; }
+                Level1Controller.Instance.SetLevel(level);
+                Level1Controller.Instance.ResetSoal();
+                GameManager.Instance.ChangeState(GameState.Game);
+            }
+            if (level2) 
+            {
+                int level = Level2Controller.Instance.GetLevel();
+                level++;
+                if (level > 25) { return; }
+                Level2Controller.Instance.SetLevel(level);
+                Level2Controller.Instance.ResetSoal();
+                GameManager.Instance.ChangeState(GameState.Game);
+            }
+            if (level3) 
+            {
+                int level = Level3Controller.Instance.GetLevel();
+                level++;
+                if(level > 7) { return; }
+                Level3Controller.Instance.SetLevel(level);
+                Level3Controller.Instance.ResetSoal();
+                GameManager.Instance.ChangeState(GameState.Game);
+            }
+        });
     }
 
     private void OnEnable()

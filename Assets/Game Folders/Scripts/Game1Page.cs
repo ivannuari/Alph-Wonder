@@ -11,6 +11,8 @@ public class Game1Page : Page
     [SerializeField] private TopLetter[] allTopLetters;
     [SerializeField] private TMP_Text[] allSoals;
 
+    [SerializeField] private GameObject[] allGameContents;
+
     [SerializeField] private RectTransform contentArea;
     [SerializeField] private ColorDot colorDotPrefab;
 
@@ -19,7 +21,7 @@ public class Game1Page : Page
 
     private void OnEnable()
     {
-        SetLevel(Level1Controller.Instance.dataSoal[0]);
+        SetLevel(Level1Controller.Instance.dataSoal[Level1Controller.Instance.GetLevel()]);
     }
 
     protected override void Start()
@@ -51,7 +53,24 @@ public class Game1Page : Page
             allSoals[i].text = data.letters[i];
         }
 
-        SpawnColorDots(data.colors);
+        SetGameContentLevel(data);
+        //SpawnColorDots(data.colors);
+    }
+
+    private void SetGameContentLevel(DataSoalLevel1 data)
+    {
+        int level = Level1Controller.Instance.GetLevel();
+        foreach(var item in allGameContents)
+        {
+            item.SetActive(false);
+        }
+
+        allGameContents[level].SetActive(true);
+
+        for (int i = 0; i < data.colors.Length; i++)
+        {
+            allGameContents[level].transform.GetChild(i).GetComponent<ColorDot>().SetColor(data.colors[i]); 
+        }
     }
 
     private void SpawnColorDots(LetterColor[] colors)

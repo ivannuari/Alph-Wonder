@@ -24,16 +24,19 @@ public class SelectLevelPage : Page
     {
         if (level == 1)
         {
+            GameManager.Instance.isFromGame = true;
             SceneManager.LoadSceneAsync("Game Koding Garis Huruf");
         }
 
         if (level == 2)
         {
+            GameManager.Instance.isFromGame = true;
             SceneManager.LoadSceneAsync("Game Koleksi Huruf");
         }
 
         if (level == 3)
         {
+            GameManager.Instance.isFromGame = true;
             SceneManager.LoadSceneAsync("Game Koding Warna Huruf");
         }
     }
