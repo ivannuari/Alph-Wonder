@@ -35,12 +35,21 @@ public class Game3Page : Page
 
     private void Instance_OnLevelChanged(DataSoalLevel3 data)
     {
+        if(data.colors.Length > 4)
+        {
+            allDropSlot[4].gameObject.SetActive(true);
+        }
+        else
+        {
+            allDropSlot[4].gameObject.SetActive(false);
+        }
+
         for (int i = 0; i < allTopLetter.Length; i++)
         {
             allTopLetter[i].Setup(data.opsiJawaban[i], data.opsiColor[i]);
         }
 
-        for (int i = 0; i < allDropSlot.Length; i++)
+        for (int i = 0; i < data.colors.Length; i++)
         {
             allDropSlot[i].Setup(data.colors[i]);
         }

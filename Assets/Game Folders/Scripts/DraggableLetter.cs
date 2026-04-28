@@ -21,6 +21,22 @@ public class DraggableLetter : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         _anim = GetComponent<Animator>();
     }
 
+    private void OnEnable()
+    {
+        Level3Controller.Instance.OnLevelChanged += Instance_OnLevelChanged;
+    }
+
+    private void OnDisable()
+    {
+        Level3Controller.Instance.OnLevelChanged -= Instance_OnLevelChanged;
+    }
+
+    private void Instance_OnLevelChanged(DataSoalLevel3 data)
+    {
+        transform.parent = null;
+        transform.position = startPosition;
+    }
+
     public void Setup(string t,LetterColor color)
     {
         letterColor = color;

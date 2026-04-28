@@ -13,6 +13,8 @@ public class Game1Page : Page
 
     [SerializeField] private GameObject[] allGameContents;
 
+    [SerializeField] private GameObject strip5;
+
     [SerializeField] private RectTransform contentArea;
     [SerializeField] private ColorDot colorDotPrefab;
 
@@ -43,6 +45,17 @@ public class Game1Page : Page
 
     private void SetLevel(DataSoalLevel1 data)
     {
+        if(data.letters.Length > 4) 
+        {
+            strip5.SetActive(true);
+            allSoals[4].gameObject.SetActive(true);
+        }
+        else
+        {
+            strip5.SetActive(false);
+            allSoals[4].gameObject.SetActive(false);
+        }
+
         for (int i = 0; i < allTopLetters.Length; i++)
         {
             allTopLetters[i].Setup(data.opsiJawaban[i], data.opsiColor[i]);
@@ -54,7 +67,6 @@ public class Game1Page : Page
         }
 
         SetGameContentLevel(data);
-        //SpawnColorDots(data.colors);
     }
 
     private void SetGameContentLevel(DataSoalLevel1 data)

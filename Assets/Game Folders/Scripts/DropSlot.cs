@@ -74,6 +74,5 @@ public class DropSlot : MonoBehaviour, IDropHandler
 
     public void ResetSoal()
     {
-        Destroy(letterObj);
     }
 }
