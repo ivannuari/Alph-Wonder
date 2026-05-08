@@ -1,5 +1,6 @@
 using GaweDeweStudio;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -67,6 +68,25 @@ public class Game1Page : Page
         }
 
         SetGameContentLevel(data);
+        StartCoroutine(StartAnimations(data.letters));
+    }
+
+    IEnumerator StartAnimations(string[] letters)
+    {
+        int level = Level1Controller.Instance.GetLevel();
+
+        ColorDot[] levelDots = allGameContents[level].GetComponentsInChildren<ColorDot>();
+
+        for (int i = 0; i < letters.Length; i++)
+        {
+            allSoals[i].GetComponent<Animator>().Play("Start");
+            GameManager.Instance.GetSound().PlaySound(allSoals[i].text);
+            ColorDot dotPrefab = Array.Find(levelDots, x => x.key == letters[i]);
+            if (dotPrefab != null)
+            { dotPrefab.StartAnimation(); }
+
+            yield return new WaitForSeconds(1.5f);
+        }
     }
 
     private void SetGameContentLevel(DataSoalLevel1 data)
@@ -81,68 +101,7 @@ public class Game1Page : Page
 
         for (int i = 0; i < data.colors.Length; i++)
         {
-            allGameContents[level].transform.GetChild(i).GetComponent<ColorDot>().SetColor(data.colors[i]); 
-        }
-    }
-
-    private void SpawnColorDots(LetterColor[] colors)
-    {
-        foreach (Transform child in contentArea)
-        {
-            Destroy(child.gameObject);
-        }
-
-        List<Vector2> usedPositions = new List<Vector2>();
-
-        float width = contentArea.rect.width;
-        float height = contentArea.rect.height;
-
-        float padding = 40f;
-
-        for (int i = 0; i < colors.Length; i++)
-        {
-            Vector2 spawnPos;
-            bool validPosition = false;
-            int attempts = 0;
-
-            while (!validPosition && attempts < maxTries)
-            {
-                float randomX = UnityEngine.Random.Range(-width / 2f + padding, width / 2f - padding);
-                float randomY = UnityEngine.Random.Range(-height / 2f + padding, height / 2f - padding);
-
-                spawnPos = new Vector2(randomX, randomY);
-
-                validPosition = true;
-
-                // cek jarak ke semua dot sebelumnya
-                foreach (var pos in usedPositions)
-                {
-                    if (Vector2.Distance(pos, spawnPos) < minDistance)
-                    {
-                        validPosition = false;
-                        break;
-                    }
-                }
-
-                attempts++;
-
-                if (validPosition)
-                {
-                    usedPositions.Add(spawnPos);
-
-                    ColorDot dot = Instantiate(colorDotPrefab, contentArea);
-                    dot.SetColor(colors[i]);
-
-                    RectTransform rect = dot.GetComponent<RectTransform>();
-                    rect.anchoredPosition = spawnPos;
-                }
-            }
-
-            // fallback kalau gagal cari posisi
-            if (!validPosition)
-            {
-                Debug.LogWarning("Gagal menemukan posisi tanpa overlap, coba kecilkan minDistance atau perbesar area.");
-            }
+            allGameContents[level].transform.GetChild(i).GetComponent<ColorDot>().SetColor(data.colors[i], data.letters[i]); 
         }
     }
 }

@@ -1,12 +1,13 @@
 using GaweDeweStudio;
 using System;
-using Unity.VectorGraphics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class CanvasManager : MonoBehaviour
 {
     [SerializeField] private Page[] allPages;
+
+    [SerializeField] private string soundKey;
 
     private void Start()
     {
@@ -23,6 +24,11 @@ public class CanvasManager : MonoBehaviour
         if(s.name == "Main Menu" && GameManager.Instance.isFromGame)
         {
             ChangePage(PageName.SelectLevel);
+        }
+
+        if (!string.IsNullOrEmpty(soundKey)) 
+        {
+            GameManager.Instance.GetSound().PlaySound(soundKey);
         }
     }
 

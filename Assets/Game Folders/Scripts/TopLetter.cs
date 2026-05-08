@@ -1,11 +1,19 @@
+using GaweDeweStudio;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class TopLetter : MonoBehaviour
 {
-    [SerializeField] private TMP_Text text;
+    public TMP_Text text;
     [SerializeField] private Image image;
+
+    private Animator _anim;
+
+    private void OnEnable()
+    {
+        _anim = GetComponent<Animator>();
+    }
 
     public void Setup(string t, LetterColor color)
     {
@@ -35,5 +43,11 @@ public class TopLetter : MonoBehaviour
         }
 
         image.color = c;
+    }
+
+    public void StartAnimation()
+    {
+        _anim.Play("Start");
+        GameManager.Instance.GetSound().PlaySound(text.text);
     }
 }

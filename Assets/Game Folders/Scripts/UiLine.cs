@@ -7,6 +7,9 @@ public class UiLine : MonoBehaviour
     public LetterColor color;
     public LetterColor endColor;
 
+    [SerializeField] private float dragWidth;   // tebal saat drag
+    [SerializeField] private float finalWidth;   // tipis saat selesai
+
     public RectTransform rect;
     public Image image;
 
@@ -27,5 +30,11 @@ public class UiLine : MonoBehaviour
     {
         image.color = key;
         color = lc;
+    }
+
+    public void SetDragging(bool isDragging)
+    {
+        float width = isDragging ? dragWidth : finalWidth;
+        rect.sizeDelta = new Vector2(rect.sizeDelta.x, width);
     }
 }

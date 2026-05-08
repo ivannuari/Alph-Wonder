@@ -1,5 +1,6 @@
 ﻿using GaweDeweStudio;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
@@ -76,12 +77,18 @@ public class Level3Controller : MonoBehaviour
         if (result.Equals(correctAnswer))
         {
             Debug.Log("✅ Jawaban Benar!");
-            GameManager.Instance.ChangeState(GameState.Result);
+            StartCoroutine(ShowResult());
         }
         else
         {
             Debug.Log("❌ Jawaban Salah!");
         }
+    }
+
+    IEnumerator ShowResult()
+    {
+        yield return new WaitForSeconds(2f);
+        GameManager.Instance.ChangeState(GameState.Result);
     }
 
     public DataSoalLevel3 GetLevelData()

@@ -88,5 +88,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 262c956ca801e754690bee89eba884d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UiLine
+  key: 
+  color: 0
+  endColor: 0
+  dragWidth: 50
+  finalWidth: 10
   rect: {fileID: 3678174102087323261}
   image: {fileID: 8382902344167170709}

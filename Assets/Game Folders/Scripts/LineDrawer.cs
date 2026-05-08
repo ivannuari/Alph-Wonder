@@ -47,6 +47,8 @@ public class LineDrawer : MonoBehaviour
 
         currentLine = Instantiate(linePrefab, canvasRect);
         currentLine.SetColor(GetColor(dot.color), dot.color);
+
+        currentLine.SetDragging(true);
     }
 
     public void EndLine()
@@ -66,6 +68,8 @@ public class LineDrawer : MonoBehaviour
             startDot.GetUIPos(canvasRect),
             endDot.GetUIPos(canvasRect)
         );
+
+        currentLine.SetDragging(false);
 
         startDot.Connected();
 

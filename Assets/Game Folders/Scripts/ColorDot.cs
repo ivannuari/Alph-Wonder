@@ -9,9 +9,19 @@ public class ColorDot : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public bool isConnect = false;
     private Image colorImage;
 
-    public void SetColor(LetterColor letterColor)
+    public string key;
+    private Animator _anim;
+
+    private void OnEnable()
+    {
+        _anim = GetComponent<Animator>();
+    }
+
+    public void SetColor(LetterColor letterColor,string k)
     {
         colorImage = GetComponent<Image>();
+
+        key = k;
 
         color = letterColor;
         switch (letterColor)
@@ -66,5 +76,10 @@ public class ColorDot : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public void Connected()
     {
         isConnect = true;
+    }
+
+    public void StartAnimation()
+    {
+        _anim.Play("Start");
     }
 }

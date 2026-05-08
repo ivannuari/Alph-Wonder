@@ -1,4 +1,6 @@
 using GaweDeweStudio;
+using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -51,12 +53,26 @@ public class Game3Page : Page
 
         for (int i = 0; i < data.colors.Length; i++)
         {
-            allDropSlot[i].Setup(data.colors[i]);
+            allDropSlot[i].Setup(data.colors[i], data.word.ToCharArray()[i].ToString());
         }
 
         for (int i = 0; i < allDraggableLetter.Length; i++)
         {
             allDraggableLetter[i].Setup(data.opsiJawaban[i], data.opsiColor[i]);
+        }
+
+        StartCoroutine(StartAnimations());
+    }
+
+    IEnumerator StartAnimations()
+    {
+        for (int i = 0; i < allTopLetter.Length; i++)
+        {
+            allTopLetter[i].StartAnimation();
+            DropSlot dropPrefab = Array.Find(allDropSlot, x => x.key == allTopLetter[i].text.text);
+            if(dropPrefab != null) { dropPrefab.StartAnimation(); }
+
+            yield return new WaitForSeconds(1.5f);
         }
     }
 }

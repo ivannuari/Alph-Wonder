@@ -1615,7 +1615,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 526033738}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1824,6 +1824,7 @@ GameObject:
   - component: {fileID: 238586277}
   - component: {fileID: 238586276}
   - component: {fileID: 238586278}
+  - component: {fileID: 238586279}
   m_Layer: 5
   m_Name: circle jawaban 5
   m_TagString: Untagged
@@ -1903,6 +1904,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TopLetter
   text: {fileID: 125396251}
   image: {fileID: 238586276}
+--- !u!95 &238586279
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 238586274}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f42fca4e89d8d244eb1afa319f778ecf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &245234986
 GameObject:
   m_ObjectHideFlags: 0
@@ -2812,6 +2835,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CanvasManager
   allPages: []
+  soundKey: Coding Warna
 --- !u!1 &479025296
 GameObject:
   m_ObjectHideFlags: 0
@@ -3299,6 +3323,7 @@ GameObject:
   - component: {fileID: 526033740}
   - component: {fileID: 526033739}
   - component: {fileID: 526033741}
+  - component: {fileID: 526033742}
   m_Layer: 5
   m_Name: Drop Slot 1
   m_TagString: Untagged
@@ -3378,6 +3403,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DropSlot
   slotColor: 0
   colorImage: {fileID: 199967995}
+  key: 
+--- !u!95 &526033742
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526033737}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fe27b48ff271ab54e9f67cf6dd6a1bb2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &585994397
 GameObject:
   m_ObjectHideFlags: 0
@@ -3644,6 +3692,7 @@ GameObject:
   - component: {fileID: 686387983}
   - component: {fileID: 686387982}
   - component: {fileID: 686387984}
+  - component: {fileID: 686387985}
   m_Layer: 5
   m_Name: circle jawaban 2
   m_TagString: Untagged
@@ -3723,6 +3772,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TopLetter
   text: {fileID: 1217024565}
   image: {fileID: 686387982}
+--- !u!95 &686387985
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686387980}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f42fca4e89d8d244eb1afa319f778ecf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &710758655
 GameObject:
   m_ObjectHideFlags: 0
@@ -3947,6 +4018,7 @@ GameObject:
   - component: {fileID: 720858944}
   - component: {fileID: 720858943}
   - component: {fileID: 720858945}
+  - component: {fileID: 720858946}
   m_Layer: 5
   m_Name: circle jawaban 6
   m_TagString: Untagged
@@ -4026,6 +4098,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TopLetter
   text: {fileID: 321243842}
   image: {fileID: 720858943}
+--- !u!95 &720858946
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720858941}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f42fca4e89d8d244eb1afa319f778ecf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &744064119
 GameObject:
   m_ObjectHideFlags: 0
@@ -4891,6 +4985,7 @@ GameObject:
   - component: {fileID: 917043722}
   - component: {fileID: 917043721}
   - component: {fileID: 917043720}
+  - component: {fileID: 917043724}
   m_Layer: 5
   m_Name: Drop Slot 5
   m_TagString: Untagged
@@ -4912,6 +5007,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DropSlot
   slotColor: 0
   colorImage: {fileID: 2004060926}
+  key: 
 --- !u!114 &917043721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4970,6 +5066,28 @@ RectTransform:
   m_AnchoredPosition: {x: 713.5, y: -57.5}
   m_SizeDelta: {x: 115, y: 115}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &917043724
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917043719}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fe27b48ff271ab54e9f67cf6dd6a1bb2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &972455304
 GameObject:
   m_ObjectHideFlags: 0
@@ -4982,6 +5100,7 @@ GameObject:
   - component: {fileID: 972455307}
   - component: {fileID: 972455306}
   - component: {fileID: 972455308}
+  - component: {fileID: 972455309}
   m_Layer: 5
   m_Name: circle jawaban 3
   m_TagString: Untagged
@@ -5061,6 +5180,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TopLetter
   text: {fileID: 1967449491}
   image: {fileID: 972455306}
+--- !u!95 &972455309
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972455304}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f42fca4e89d8d244eb1afa319f778ecf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &980907420
 GameObject:
   m_ObjectHideFlags: 0
@@ -5480,6 +5621,7 @@ GameObject:
   - component: {fileID: 1120292751}
   - component: {fileID: 1120292750}
   - component: {fileID: 1120292752}
+  - component: {fileID: 1120292753}
   m_Layer: 5
   m_Name: Drop Slot 4
   m_TagString: Untagged
@@ -5559,6 +5701,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DropSlot
   slotColor: 0
   colorImage: {fileID: 33847104}
+  key: 
+--- !u!95 &1120292753
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120292748}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fe27b48ff271ab54e9f67cf6dd6a1bb2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1130050931
 GameObject:
   m_ObjectHideFlags: 0
@@ -5786,6 +5951,7 @@ GameObject:
   - component: {fileID: 1178288061}
   - component: {fileID: 1178288060}
   - component: {fileID: 1178288062}
+  - component: {fileID: 1178288063}
   m_Layer: 5
   m_Name: Drop Slot 2
   m_TagString: Untagged
@@ -5865,6 +6031,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DropSlot
   slotColor: 0
   colorImage: {fileID: 215833882}
+  key: 
+--- !u!95 &1178288063
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178288058}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fe27b48ff271ab54e9f67cf6dd6a1bb2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1192554430
 GameObject:
   m_ObjectHideFlags: 0
@@ -6014,6 +6203,7 @@ GameObject:
   - component: {fileID: 1207055077}
   - component: {fileID: 1207055076}
   - component: {fileID: 1207055078}
+  - component: {fileID: 1207055079}
   m_Layer: 5
   m_Name: Drop Slot 3
   m_TagString: Untagged
@@ -6093,6 +6283,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DropSlot
   slotColor: 0
   colorImage: {fileID: 1324171467}
+  key: 
+--- !u!95 &1207055079
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207055074}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fe27b48ff271ab54e9f67cf6dd6a1bb2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1217024563
 GameObject:
   m_ObjectHideFlags: 0
@@ -7734,6 +7947,7 @@ GameObject:
   - component: {fileID: 1649838637}
   - component: {fileID: 1649838636}
   - component: {fileID: 1649838638}
+  - component: {fileID: 1649838639}
   m_Layer: 5
   m_Name: circle jawaban 1
   m_TagString: Untagged
@@ -7751,7 +7965,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 77051799}
   m_Father: {fileID: 11950359}
@@ -7813,6 +8027,85 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TopLetter
   text: {fileID: 77051800}
   image: {fileID: 1649838636}
+--- !u!95 &1649838639
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649838634}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f42fca4e89d8d244eb1afa319f778ecf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!1001 &1677599359
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3313505943746498604, guid: 0b57a22c6b3ee7046984e3cc87e40c4d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1227.467
+      objectReference: {fileID: 0}
+    - target: {fileID: 3313505943746498604, guid: 0b57a22c6b3ee7046984e3cc87e40c4d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 713.2573
+      objectReference: {fileID: 0}
+    - target: {fileID: 3313505943746498604, guid: 0b57a22c6b3ee7046984e3cc87e40c4d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3313505943746498604, guid: 0b57a22c6b3ee7046984e3cc87e40c4d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3313505943746498604, guid: 0b57a22c6b3ee7046984e3cc87e40c4d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3313505943746498604, guid: 0b57a22c6b3ee7046984e3cc87e40c4d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3313505943746498604, guid: 0b57a22c6b3ee7046984e3cc87e40c4d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3313505943746498604, guid: 0b57a22c6b3ee7046984e3cc87e40c4d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3313505943746498604, guid: 0b57a22c6b3ee7046984e3cc87e40c4d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3313505943746498604, guid: 0b57a22c6b3ee7046984e3cc87e40c4d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430631841311611055, guid: 0b57a22c6b3ee7046984e3cc87e40c4d, type: 3}
+      propertyPath: m_Name
+      value: Game Manager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0b57a22c6b3ee7046984e3cc87e40c4d, type: 3}
 --- !u!1 &1706993445
 GameObject:
   m_ObjectHideFlags: 0
@@ -8092,6 +8385,7 @@ GameObject:
   - component: {fileID: 1760239843}
   - component: {fileID: 1760239842}
   - component: {fileID: 1760239844}
+  - component: {fileID: 1760239845}
   m_Layer: 5
   m_Name: circle jawaban 4
   m_TagString: Untagged
@@ -8171,6 +8465,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TopLetter
   text: {fileID: 158414556}
   image: {fileID: 1760239842}
+--- !u!95 &1760239845
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760239840}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f42fca4e89d8d244eb1afa319f778ecf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1783495382
 GameObject:
   m_ObjectHideFlags: 0
@@ -9461,3 +9777,4 @@ SceneRoots:
   - {fileID: 1820578056}
   - {fileID: 1857354556}
   - {fileID: 744064121}
+  - {fileID: 1677599359}
