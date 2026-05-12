@@ -74,7 +74,7 @@ public class LineDrawer : MonoBehaviour
         startDot.Connected();
 
         allLines.Add(currentLine);
-        Level1Controller.Instance.SetLetterColor(startDot.color, endDot.color);
+        Level1Controller.Instance.SetLetterColor(startDot.color, endDot.color, startDot.key, endDot.key);
 
         ResetLine();
     }

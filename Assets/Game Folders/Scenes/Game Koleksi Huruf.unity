@@ -1138,7 +1138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CanvasManager
   allPages: []
-  soundKey: Koleksi Huruf
+  soundKey: Game 2
 --- !u!1 &513313693
 GameObject:
   m_ObjectHideFlags: 0

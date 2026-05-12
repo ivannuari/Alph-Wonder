@@ -1,4 +1,5 @@
 using GaweDeweStudio;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,9 +11,13 @@ public class SelectLevelPage : Page
     [SerializeField] private Button level2Button;
     [SerializeField] private Button level3Button;
 
+    private Button[] allButtons;
+
     protected override void Start()
     {
         base.Start();
+
+        allButtons = GetComponentsInChildren<Button>();
 
         backButton.onClick.AddListener(() => GameManager.Instance.ChangeState(GameState.Menu));
         level1Button.onClick.AddListener(() => SelectLevel(1));
@@ -22,22 +27,36 @@ public class SelectLevelPage : Page
 
     private void SelectLevel(int level)
     {
+        foreach (var button in allButtons) 
+        {
+            button.interactable = false;
+        }
+
         if (level == 1)
         {
             GameManager.Instance.isFromGame = true;
-            SceneManager.LoadSceneAsync("Game Koding Garis Huruf");
+            GameManager.Instance.GetSound().PlaySound("Coding Garis");
+            StartCoroutine(LoadScene("Game Koding Garis Huruf"));
         }
 
         if (level == 2)
         {
             GameManager.Instance.isFromGame = true;
-            SceneManager.LoadSceneAsync("Game Koleksi Huruf");
+            GameManager.Instance.GetSound().PlaySound("Koleksi Huruf");
+            StartCoroutine(LoadScene("Game Koleksi Huruf"));
         }
 
         if (level == 3)
         {
             GameManager.Instance.isFromGame = true;
-            SceneManager.LoadSceneAsync("Game Koding Warna Huruf");
+            GameManager.Instance.GetSound().PlaySound("Coding Warna");
+            StartCoroutine(LoadScene("Game Koding Warna Huruf"));
         }
+    }
+
+    IEnumerator LoadScene(string key)
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadSceneAsync(key);
     }
 }

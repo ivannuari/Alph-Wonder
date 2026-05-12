@@ -4510,7 +4510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CanvasManager
   allPages: []
-  soundKey: Coding Garis
+  soundKey: Game 1
 --- !u!114 &909704410
 MonoBehaviour:
   m_ObjectHideFlags: 0

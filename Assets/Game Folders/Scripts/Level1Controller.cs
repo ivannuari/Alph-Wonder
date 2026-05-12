@@ -1,5 +1,6 @@
 ﻿using GaweDeweStudio;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -27,43 +28,6 @@ public class Level1Controller : MonoBehaviour
             Instance = this;
         }
     }
-    internal void AddConnection(LetterColor a, LetterColor b)
-    {
-        playerConnections.Add((a, b));
-
-        CheckAnswer();
-    }
-
-    private void CheckAnswer()
-    {
-        var correct = dataSoal[level].colors;
-
-        if (playerConnections.Count < correct.Length - 1)
-            return;
-
-        bool isCorrect = true;
-
-        for (int i = 0; i < correct.Length - 1; i++)
-        {
-            var expected = (correct[i], correct[i + 1]);
-            var player = playerConnections[i];
-
-            if (player != expected)
-            {
-                isCorrect = false;
-                break;
-            }
-        }
-
-        if (isCorrect)
-        {
-            Debug.Log("✅ BENAR!");
-        }
-        else
-        {
-            Debug.Log("❌ SALAH!");
-        }
-    }
 
     internal void SetLevel(int level)
     {
@@ -79,10 +43,26 @@ public class Level1Controller : MonoBehaviour
         }
     }
 
-    public void SetLetterColor(LetterColor startColor,LetterColor endColor)
+    public void SetLetterColor(LetterColor startColor,LetterColor endColor, string a, string b)
     {
         allJawabans.Add(startColor);
 
+        StartCoroutine(PlaySound(a, b, endColor));
+    }
+
+    IEnumerator PlaySound(string a, string b, LetterColor endColor)
+    {
+        GameManager.Instance.GetSound().PlaySound(a);
+        yield return new WaitForSeconds(1f);
+
+        GameManager.Instance.GetSound().PlaySound(b);
+        yield return new WaitForSeconds(1f);
+
+        CheckAnswer(endColor);
+    }
+
+    private void CheckAnswer(LetterColor endColor)
+    {
         if (allJawabans.Count < 3) { return; }
 
         allJawabans.Add(endColor);
