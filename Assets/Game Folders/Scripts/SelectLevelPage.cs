@@ -35,28 +35,28 @@ public class SelectLevelPage : Page
         if (level == 1)
         {
             GameManager.Instance.isFromGame = true;
-            GameManager.Instance.GetSound().PlaySound("Coding Garis");
+            //GameManager.Instance.GetSound().PlaySound("Coding Garis");
             StartCoroutine(LoadScene("Game Koding Garis Huruf"));
         }
 
         if (level == 2)
         {
             GameManager.Instance.isFromGame = true;
-            GameManager.Instance.GetSound().PlaySound("Koleksi Huruf");
+            //GameManager.Instance.GetSound().PlaySound("Koleksi Huruf");
             StartCoroutine(LoadScene("Game Koleksi Huruf"));
         }
 
         if (level == 3)
         {
             GameManager.Instance.isFromGame = true;
-            GameManager.Instance.GetSound().PlaySound("Coding Warna");
+            //GameManager.Instance.GetSound().PlaySound("Coding Warna");
             StartCoroutine(LoadScene("Game Koding Warna Huruf"));
         }
     }
 
     IEnumerator LoadScene(string key)
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(.01f);
         SceneManager.LoadSceneAsync(key);
     }
 }

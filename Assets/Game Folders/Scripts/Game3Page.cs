@@ -15,6 +15,9 @@ public class Game3Page : Page
 
     [SerializeField] private DraggableLetter[] allDraggableLetter;
 
+    [SerializeField] private string soundId;
+    [SerializeField] private float soundDelay;
+
     protected override void Start()
     {
         base.Start();
@@ -66,6 +69,9 @@ public class Game3Page : Page
 
     IEnumerator StartAnimations()
     {
+        GameManager.Instance.GetSound().PlaySound(soundId);
+        yield return new WaitForSeconds(soundDelay);
+
         for (int i = 0; i < allTopLetter.Length; i++)
         {
             allTopLetter[i].StartAnimation();

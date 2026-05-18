@@ -2427,6 +2427,8 @@ MonoBehaviour:
   - {fileID: 585994399}
   - {fileID: 594102716}
   - {fileID: 1007086069}
+  soundId: Game 3
+  soundDelay: 1
 --- !u!1 &406872883
 GameObject:
   m_ObjectHideFlags: 0
@@ -2835,7 +2837,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CanvasManager
   allPages: []
-  soundKey: Game 3
+  soundKey: Coding Warna
 --- !u!1 &479025296
 GameObject:
   m_ObjectHideFlags: 0

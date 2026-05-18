@@ -945,6 +945,7 @@ MonoBehaviour:
   - {fileID: 686723365}
   - {fileID: 531570167}
   hp: 4
+  soundId: Game 2
 --- !u!1 &394234041
 GameObject:
   m_ObjectHideFlags: 0
@@ -1138,7 +1139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CanvasManager
   allPages: []
-  soundKey: Game 2
+  soundKey: Koleksi Huruf
 --- !u!1 &513313693
 GameObject:
   m_ObjectHideFlags: 0

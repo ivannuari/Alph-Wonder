@@ -24,6 +24,7 @@ namespace GaweDeweStudio
         SelectLevel1,
         SelectLevel2,
         SelectLevel3,
-        Result
+        Result,
+        Exit
     }
 }

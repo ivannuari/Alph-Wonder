@@ -4510,7 +4510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CanvasManager
   allPages: []
-  soundKey: Game 1
+  soundKey: Coding Garis
 --- !u!114 &909704410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9936,6 +9936,8 @@ MonoBehaviour:
   colorDotPrefab: {fileID: 8508050844361166818, guid: 580d979203054a848bd5bf2e0b24353b, type: 3}
   minDistance: 80
   maxTries: 50
+  soundId: Game 1
+  soundDelay: 1
 --- !u!1001 &1798030598
 PrefabInstance:
   m_ObjectHideFlags: 0

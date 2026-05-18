@@ -306,4 +306,8 @@ MonoBehaviour:
     soundClip: {fileID: 8300000, guid: 781924fb5fffa0d4b91c9e97ef04f72d, type: 3}
     isLoop: 0
     source: {fileID: 0}
+  - soundName: Opening
+    soundClip: {fileID: 8300000, guid: f8803f97ff242e44ebe6bd326648b77c, type: 3}
+    isLoop: 0
+    source: {fileID: 0}
   isBgmPlayed: 0

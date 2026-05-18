@@ -1,7 +1,6 @@
 using GaweDeweStudio;
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,6 +20,9 @@ public class Game1Page : Page
 
     [SerializeField] private float minDistance = 80f; // jarak minimal antar dot
     [SerializeField] private int maxTries = 50; // biar gak infinite loop
+
+    [SerializeField] private string soundId;
+    [SerializeField] private float soundDelay;
 
     private void OnEnable()
     {
@@ -74,8 +76,10 @@ public class Game1Page : Page
     IEnumerator StartAnimations(string[] letters)
     {
         int level = Level1Controller.Instance.GetLevel();
-
         ColorDot[] levelDots = allGameContents[level].GetComponentsInChildren<ColorDot>();
+
+        GameManager.Instance.GetSound().PlaySound(soundId);
+        yield return new WaitForSeconds(soundDelay);
 
         for (int i = 0; i < letters.Length; i++)
         {

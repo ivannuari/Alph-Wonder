@@ -123,7 +123,7 @@ public class Level2Controller : MonoBehaviour
 
         GetComponent<AlphabetSound>().GetSound(currentLevel);
 
-        if(score >= 30)
+        if(score >= 15)
         {
             GameManager.Instance.ChangeState(GameState.Result);
         }

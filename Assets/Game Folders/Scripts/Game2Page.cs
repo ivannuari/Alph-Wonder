@@ -1,4 +1,5 @@
 using GaweDeweStudio;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,6 +13,8 @@ public class Game2Page : Page
     [SerializeField] private GameObject[] hpImages;
     [SerializeField] private int hp;
 
+    [SerializeField] private string soundId;
+
     protected override void Start()
     {
         base.Start();
@@ -22,6 +25,14 @@ public class Game2Page : Page
             Level2Controller.Instance.StopGame();
             GameManager.Instance.ChangeState(GameState.Level2);
         });
+    }
+
+    private void OnEnable()
+    {
+        titleImage.sprite = Level2Controller.Instance.GetTitleImage();
+        scoreText.text = $"{0}/{15}";
+
+        GameManager.Instance.GetSound().PlaySound(soundId);
     }
 
     protected override void OnDestroy()
@@ -45,16 +56,8 @@ public class Game2Page : Page
         }
     }
 
-    private void OnEnable()
-    {
-        titleImage.sprite = Level2Controller.Instance.GetTitleImage();
-        scoreText.text = $"{0}/{30}";
-    }
-
-    
-
     private void Instance_OnScoreUpdated(int score)
     {
-        scoreText.text = $"{score}/{30}";
+        scoreText.text = $"{score}/{15}";
     }
 }

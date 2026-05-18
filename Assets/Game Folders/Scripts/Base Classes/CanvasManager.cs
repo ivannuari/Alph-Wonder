@@ -54,7 +54,7 @@ public class CanvasManager : MonoBehaviour
                 ChangePage(PageName.Information);
                 break;
             case GameState.Exit:
-                Application.Quit();
+                ChangePage(PageName.Exit);
                 break;
             case GameState.Game:
                 ChangePage(PageName.Game);
