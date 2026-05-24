@@ -81,8 +81,16 @@ public class Level1Controller : MonoBehaviour
             isWin = false;
         }
 
-        GameManager.Instance.ChangeState(GameState.Result);
         ClearLines();
+        StartCoroutine(ShowResult());
+    }
+
+    IEnumerator ShowResult()
+    {
+        yield return new WaitForSeconds(2f);
+        GameManager.Instance.ShowWidget();
+        yield return new WaitForSeconds(2f);
+        GameManager.Instance.ChangeState(GameState.Result);
     }
 
     public void ResetSoal()

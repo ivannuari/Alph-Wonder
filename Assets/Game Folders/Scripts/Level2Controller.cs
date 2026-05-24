@@ -125,8 +125,17 @@ public class Level2Controller : MonoBehaviour
 
         if(score >= 15)
         {
-            GameManager.Instance.ChangeState(GameState.Result);
+            StopGame();
+            StartCoroutine(ShowResult());
         }
+    }
+
+    IEnumerator ShowResult()
+    {
+        yield return new WaitForSeconds(2f);
+        GameManager.Instance.ShowWidget();
+        yield return new WaitForSeconds(2f);
+        GameManager.Instance.ChangeState(GameState.Result);
     }
 
     public void TakeDamage()

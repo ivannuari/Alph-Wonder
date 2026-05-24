@@ -7,6 +7,8 @@ public class CanvasManager : MonoBehaviour
 {
     [SerializeField] private Page[] allPages;
 
+    [SerializeField] private GameObject stickerWidget;
+
     [SerializeField] private string soundKey;
 
     private void Start()
@@ -14,6 +16,7 @@ public class CanvasManager : MonoBehaviour
         allPages = GetComponentsInChildren<Page>(true);
 
         GameManager.Instance.OnStateChanged += Instance_OnStateChanged;
+        GameManager.Instance.OnWidgetOpened += ShowWidget;
 
         if (!GameManager.Instance.GetSound().IsBgmPlay())
         {
@@ -35,6 +38,7 @@ public class CanvasManager : MonoBehaviour
     private void OnDestroy()
     {
         GameManager.Instance.OnStateChanged -= Instance_OnStateChanged;
+        GameManager.Instance.OnWidgetOpened -= ShowWidget;
     }
 
     private void Instance_OnStateChanged(GameState state)
@@ -86,5 +90,10 @@ public class CanvasManager : MonoBehaviour
         {
             _findPage.gameObject.SetActive(true);
         }
+    }
+
+    public void ShowWidget()
+    {
+        stickerWidget.SetActive(true);
     }
 }

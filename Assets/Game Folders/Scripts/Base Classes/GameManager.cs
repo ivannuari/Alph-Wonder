@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace GaweDeweStudio
@@ -18,6 +19,8 @@ namespace GaweDeweStudio
 
         public delegate void GameStateDelegate(GameState newState);
         public event GameStateDelegate OnStateChanged;
+
+        public event Action OnWidgetOpened;
 
         private void Awake()
         {
@@ -45,6 +48,11 @@ namespace GaweDeweStudio
             currentState = newState;
 
             OnStateChanged?.Invoke(currentState);
+        }
+
+        public void ShowWidget()
+        {
+            OnWidgetOpened?.Invoke();
         }
 
         public AudioManager GetSound() { return _sound; }
