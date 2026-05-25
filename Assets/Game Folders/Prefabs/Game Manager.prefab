@@ -310,4 +310,8 @@ MonoBehaviour:
     soundClip: {fileID: 8300000, guid: f8803f97ff242e44ebe6bd326648b77c, type: 3}
     isLoop: 0
     source: {fileID: 0}
+  - soundName: Pintar
+    soundClip: {fileID: 8300000, guid: 6ae900c2931b5a443b182b1261834dca, type: 3}
+    isLoop: 0
+    source: {fileID: 0}
   isBgmPlayed: 0

@@ -76,12 +76,12 @@ public class Level3Controller : MonoBehaviour
 
         if (result.Equals(correctAnswer))
         {
-            Debug.Log("✅ Jawaban Benar!");
+            //Debug.Log("✅ Jawaban Benar!");
             StartCoroutine(ShowResult());
         }
         else
         {
-            Debug.Log("❌ Jawaban Salah!");
+            //Debug.Log("❌ Jawaban Salah!");
         }
     }
 

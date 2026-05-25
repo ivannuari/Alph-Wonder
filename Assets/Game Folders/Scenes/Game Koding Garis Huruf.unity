@@ -10126,7 +10126,7 @@ MonoBehaviour:
   minDistance: 80
   maxTries: 50
   soundId: Game 1
-  soundDelay: 2
+  soundDelay: 3
 --- !u!1001 &1798030598
 PrefabInstance:
   m_ObjectHideFlags: 0

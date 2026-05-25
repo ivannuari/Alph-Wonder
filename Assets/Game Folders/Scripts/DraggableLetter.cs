@@ -11,6 +11,8 @@ public class DraggableLetter : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
 
+    [SerializeField] private RectTransform dragArea;
+
     private Vector3 startPosition;
     private Animator _anim;
 
@@ -51,7 +53,30 @@ public class DraggableLetter : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
     public void OnDrag(PointerEventData eventData)
     {
-        rectTransform.position = Input.mousePosition;
+        //rectTransform.position = Input.mousePosition;
+        Vector2 localPoint;
+
+        // Convert mouse position ke local position area
+        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            dragArea,
+            eventData.position,
+            eventData.pressEventCamera,
+            out localPoint))
+        {
+            // Ambil batas area
+            float clampedX = Mathf.Clamp(
+                localPoint.x,
+                dragArea.rect.xMin,
+                dragArea.rect.xMax);
+
+            float clampedY = Mathf.Clamp(
+                localPoint.y,
+                dragArea.rect.yMin,
+                dragArea.rect.yMax);
+
+            // Set posisi object
+            rectTransform.localPosition = new Vector3(clampedX, clampedY, 0);
+        }
     }
 
     public void OnEndDrag(PointerEventData eventData)
