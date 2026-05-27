@@ -66,8 +66,7 @@ public class Level2Controller : MonoBehaviour
 
         if(newState == GameState.Result)
         {
-            isPlaying = false;
-            StopCoroutine(routine);
+            StopGame();
         }
 
         if(newState == GameState.Level2)
@@ -151,6 +150,8 @@ public class Level2Controller : MonoBehaviour
 
     public void StopGame()
     {
+        isPlaying = false;
+        StopCoroutine(routine);
         OnGameStopped?.Invoke();
     }
 
@@ -178,5 +179,8 @@ public class Level2Controller : MonoBehaviour
     {
         score = 0;
         health = 4;
+
+        OnScoreUpdated?.Invoke(score);
+        OnHealthUpdated?.Invoke(health);
     }
 }

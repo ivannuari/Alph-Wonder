@@ -5585,22 +5585,22 @@ MonoBehaviour:
     - A
     - B
     opsiColor: 040000000200000005000000000000000300000001000000
-  - word: ROKOK
-    colors: 0300000002000000010000000200000001000000
+  - word: BALON
+    colors: 0300000004000000050000000000000001000000
     letters:
-    - R
-    - O
-    - K
-    - O
-    - K
-    opsiJawaban:
-    - S
-    - O
-    - K
-    - C
+    - B
     - A
-    - R
-    opsiColor: 010000000100000002000000040000000500000003000000
+    - L
+    - O
+    - N
+    opsiJawaban:
+    - N
+    - O
+    - K
+    - L
+    - A
+    - B
+    opsiColor: 010000000000000002000000050000000400000003000000
   allJawabans: 
   jawaban: 
   isWin: 0

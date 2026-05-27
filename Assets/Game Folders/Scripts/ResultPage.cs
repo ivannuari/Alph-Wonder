@@ -100,11 +100,11 @@ public class ResultPage : Page
         int level = Level2Controller.Instance.GetLevel();
 
         soalImage.sprite = Level2Controller.Instance.GetTitleImage();
-        resultText.text = $"{poin}/30";
+        resultText.text = $"{poin}/15";
 
-        if (poin > 20) { star = 3; }
-        if (poin > 10 && poin < 20) { star = 2; }
-        if (poin > 0 && poin < 10) { star = 1; }
+        if (poin > 10) { star = 3; }
+        if (poin > 5 && poin < 10) { star = 2; }
+        if (poin > 0 && poin < 5) { star = 1; }
 
         StartCoroutine(SetStars(star));
 
