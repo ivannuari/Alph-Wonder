@@ -18,6 +18,7 @@ public class Level3Controller : MonoBehaviour
     [SerializeField] private int poin;
 
     public event Action<DataSoalLevel3> OnLevelChanged;
+    public event Action OnGameReseted;
 
     private void Awake()
     {
@@ -115,6 +116,8 @@ public class Level3Controller : MonoBehaviour
         {
             item.ResetSoal();
         }
+
+        OnGameReseted?.Invoke();
     }
 }
 

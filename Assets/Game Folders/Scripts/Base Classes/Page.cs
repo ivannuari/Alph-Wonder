@@ -19,6 +19,8 @@ public class Page : MonoBehaviour
 
     protected virtual void OnDestroy()
     {
+        if (allButttons == null) {return; }
+
         foreach (var item in allButttons)
         {
             item.onClick.RemoveAllListeners();

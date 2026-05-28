@@ -30,7 +30,19 @@ public class Game3Page : Page
     private void OnEnable()
     {
         Level3Controller.Instance.OnLevelChanged += Instance_OnLevelChanged;
+        ResetLayout();
         Instance_OnLevelChanged(Level3Controller.Instance.GetLevelData());
+    }
+
+    private void ResetLayout()
+    {
+        foreach (var item in allDraggableLetter) 
+        {
+            item.transform.parent = null;
+            item.transform.SetParent(transform);
+
+            item.ReturnToStart();
+        }
     }
 
     private void OnDisable()

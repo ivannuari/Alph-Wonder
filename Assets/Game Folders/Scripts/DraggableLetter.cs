@@ -21,6 +21,8 @@ public class DraggableLetter : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
         _anim = GetComponent<Animator>();
+
+        startPosition = transform.position;
     }
 
     private void OnEnable()
