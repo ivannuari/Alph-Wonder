@@ -3,7 +3,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 
 public class Level3Controller : MonoBehaviour
 {
@@ -78,10 +77,13 @@ public class Level3Controller : MonoBehaviour
         if (result.Equals(correctAnswer))
         {
             //Debug.Log("✅ Jawaban Benar!");
+            poin = 3;
             StartCoroutine(ShowResult());
         }
         else
         {
+            GameOver();
+            
             //Debug.Log("❌ Jawaban Salah!");
         }
     }
@@ -118,6 +120,12 @@ public class Level3Controller : MonoBehaviour
         }
 
         OnGameReseted?.Invoke();
+    }
+
+    public void GameOver()
+    {
+        poin = 0;
+        StartCoroutine (ShowResult());
     }
 }
 

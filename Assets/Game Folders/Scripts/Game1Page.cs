@@ -24,9 +24,34 @@ public class Game1Page : Page
     [SerializeField] private string soundId;
     [SerializeField] private float soundDelay;
 
+    [SerializeField] private TMP_Text timerText;
+    [SerializeField] private bool timerStart = false;
+
+    private int timer = 50;
+    private Coroutine countDownRoutine;
+
     private void OnEnable()
     {
         SetLevel(Level1Controller.Instance.dataSoal[Level1Controller.Instance.GetLevel()]);
+        timer = 50;
+        timerStart = true;
+        countDownRoutine = StartCoroutine(StartTimer());
+    }
+
+    IEnumerator StartTimer()
+    {
+        while (timerStart)
+        {
+            timerText.text = timer.ToString();
+            yield return new WaitForSeconds(1f);
+
+            timer--;
+            if (timer == 0)
+            {
+                timerStart = false;
+                Level1Controller.Instance.GameOver();
+            }
+        }
     }
 
     protected override void Start()

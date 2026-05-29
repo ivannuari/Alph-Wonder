@@ -10,6 +10,8 @@ public class Game3Page : Page
     [SerializeField] private Button backButton;
     [SerializeField] private TMP_Text titleText;
 
+    [SerializeField] private TMP_Text timerText;
+
     [SerializeField] private TopLetter[] allTopLetter;
     [SerializeField] private DropSlot[] allDropSlot;
 
@@ -17,6 +19,10 @@ public class Game3Page : Page
 
     [SerializeField] private string soundId;
     [SerializeField] private float soundDelay;
+    [SerializeField] private bool timerStart = false;
+
+    private int timer = 50;
+    private Coroutine countDownRoutine;
 
     protected override void Start()
     {
@@ -31,7 +37,28 @@ public class Game3Page : Page
     {
         Level3Controller.Instance.OnLevelChanged += Instance_OnLevelChanged;
         ResetLayout();
+
+        timer = 50;
+        timerStart = true;
+        countDownRoutine = StartCoroutine(StartTimer());
+
         Instance_OnLevelChanged(Level3Controller.Instance.GetLevelData());
+    }
+
+    IEnumerator StartTimer()
+    {
+        while (timerStart)
+        {
+            timerText.text = timer.ToString();
+            yield return new WaitForSeconds(1f);
+
+            timer--;
+            if(timer == 0) 
+            {
+                timerStart = false;
+                Level3Controller.Instance.GameOver(); 
+            }
+        }
     }
 
     private void ResetLayout()
@@ -39,7 +66,7 @@ public class Game3Page : Page
         foreach (var item in allDraggableLetter) 
         {
             item.transform.parent = null;
-            item.transform.SetParent(transform);
+            item.transform.SetParent(transform, true);
 
             item.ReturnToStart();
         }
@@ -47,6 +74,8 @@ public class Game3Page : Page
 
     private void OnDisable()
     {
+        timerStart = false;
+        StopCoroutine(countDownRoutine);
         Level3Controller.Instance.OnLevelChanged -= Instance_OnLevelChanged;
     }
 

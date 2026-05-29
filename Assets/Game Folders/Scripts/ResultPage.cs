@@ -131,9 +131,9 @@ public class ResultPage : Page
         int poin = Level3Controller.Instance.GetScore();
         int level = Level3Controller.Instance.GetLevel();
 
-        int star = 3;
+        int star = poin;
         StartCoroutine(SetStars(star));
 
-        GameManager.Instance.levelData3.Save(level, 3);
+        GameManager.Instance.levelData3.Save(level, star);
     }
 }

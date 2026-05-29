@@ -9,6 +9,16 @@ public class SelectLevel1Page : Page
 
     [SerializeField] private Level1Card[] allLevelCard;
 
+    private void OnEnable()
+    {
+        var data = GameManager.Instance.levelData1;
+
+        for (int i = 0; i < allLevelCard.Length; i++)
+        {
+            allLevelCard[i].Setup(i, null, data.saveData[i].star);
+        }
+    }
+
     protected override void Start()
     {
         base.Start();
@@ -17,12 +27,5 @@ public class SelectLevel1Page : Page
         {
             SceneManager.LoadSceneAsync("Main Menu");
         });
-
-        var data = GameManager.Instance.levelData1;
-
-        for (int i = 0; i < allLevelCard.Length; i++)
-        {
-            allLevelCard[i].Setup(i, null, data.saveData[i].star);
-        }
     }
 }

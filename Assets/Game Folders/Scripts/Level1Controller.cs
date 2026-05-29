@@ -74,15 +74,18 @@ public class Level1Controller : MonoBehaviour
 
         if (jawaban.SequenceEqual(dataSoal[level].colors))
         {
+            poin = 3;
             isWin = true;
+
+            ClearLines();
+            StartCoroutine(ShowResult());
+
+            return;
         }
         else
         {
-            isWin = false;
+            GameOver();
         }
-
-        ClearLines();
-        StartCoroutine(ShowResult());
     }
 
     IEnumerator ShowResult()
@@ -105,6 +108,15 @@ public class Level1Controller : MonoBehaviour
 
     public int GetLevel() { return level; }
     public int GetScore() { return poin; }
+
+    public void GameOver()
+    {
+        poin = 0;
+        isWin = false;
+
+        ClearLines();
+        StartCoroutine(ShowResult());
+    }
 }
 
 

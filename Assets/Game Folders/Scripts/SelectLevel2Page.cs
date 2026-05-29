@@ -22,6 +22,14 @@ public class SelectLevel2Page : Page
         });
 
         GameManager.Instance.ChangeState(GameState.Level2);
+    }
+
+    private void OnEnable()
+    {
+        foreach (Transform item in content) 
+        {
+            Destroy(item.gameObject);
+        }
 
         SpawnCards();
     }
