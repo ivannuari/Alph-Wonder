@@ -8567,6 +8567,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff93f46bf5f11f45bf92801100feff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StickerBenarWidget
+  allSprites:
+  - {fileID: 21300000, guid: 4d7761ee3aeabf540ba8a9e5267341ac, type: 3}
+  - {fileID: 21300000, guid: 5f9029fd2bb7cb54e96c37fea066fe10, type: 3}
+  iconImage: {fileID: 1188833311}
+  level: 1
 --- !u!95 &1523751508
 Animator:
   serializedVersion: 7

@@ -59,6 +59,7 @@ public class Game1Page : Page
         base.Start();
         backButton.onClick.AddListener(() =>
         {
+            Level1Controller.Instance.ClearLines();
             GameManager.Instance.ChangeState(GameState.Level1);
         });
     }

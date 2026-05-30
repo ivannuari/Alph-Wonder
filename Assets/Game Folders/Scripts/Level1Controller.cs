@@ -17,9 +17,10 @@ public class Level1Controller : MonoBehaviour
 
     public bool isWin;
 
-
     [SerializeField] private int level;
     [SerializeField] private int poin;
+
+    private LineDrawer _line;
 
     private void Awake()
     {
@@ -27,6 +28,8 @@ public class Level1Controller : MonoBehaviour
         {
             Instance = this;
         }
+
+        _line = GetComponent<LineDrawer>();
     }
 
     internal void SetLevel(int level)
@@ -103,7 +106,7 @@ public class Level1Controller : MonoBehaviour
 
     public void ClearLines()
     {
-        GetComponent<LineDrawer>().ClearLines();
+        _line.ClearLines();
     }
 
     public int GetLevel() { return level; }
