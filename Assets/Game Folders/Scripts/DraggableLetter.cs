@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -55,31 +55,20 @@ public class DraggableLetter : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
     public void OnDrag(PointerEventData eventData)
     {
-        //rectTransform.position = Input.mousePosition;
         Vector2 localPoint;
 
-        // Convert mouse position ke local position area
         if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
             dragArea,
             eventData.position,
             eventData.pressEventCamera,
             out localPoint))
         {
-            // Ambil batas area
-            float clampedX = Mathf.Clamp(
-                localPoint.x,
-                dragArea.rect.xMin,
-                dragArea.rect.xMax);
+            float clampedX = Mathf.Clamp(localPoint.x, dragArea.rect.xMin, dragArea.rect.xMax);
+            float clampedY = Mathf.Clamp(localPoint.y, dragArea.rect.yMin, dragArea.rect.yMax);
 
-            float clampedY = Mathf.Clamp(
-                localPoint.y,
-                dragArea.rect.yMin,
-                dragArea.rect.yMax);
-
-            // Set posisi object
-            rectTransform.localPosition = new Vector3(clampedX, clampedY, 0);
-            var pos = Camera.main.WorldToScreenPoint(Input.mousePosition);
-            Debug.LogWarning($"local point: {localPoint}, mouse: {pos.x},{pos.y}");
+            // ✅ Konversi dari local dragArea → world position → assign ke rectTransform
+            Vector3 worldPoint = dragArea.TransformPoint(new Vector3(clampedX, clampedY, 0));
+            rectTransform.position = worldPoint;
         }
     }
 
