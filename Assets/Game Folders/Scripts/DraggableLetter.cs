@@ -78,6 +78,8 @@ public class DraggableLetter : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
             // Set posisi object
             rectTransform.localPosition = new Vector3(clampedX, clampedY, 0);
+            var pos = Camera.main.WorldToScreenPoint(Input.mousePosition);
+            Debug.LogWarning($"local point: {localPoint}, mouse: {pos.x},{pos.y}");
         }
     }
 

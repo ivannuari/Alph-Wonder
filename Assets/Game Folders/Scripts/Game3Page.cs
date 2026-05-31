@@ -38,7 +38,6 @@ public class Game3Page : Page
         Level3Controller.Instance.OnLevelChanged += Instance_OnLevelChanged;
         ResetLayout();
 
-        timer = 50;
         timerStart = true;
         countDownRoutine = StartCoroutine(StartTimer());
 
@@ -47,13 +46,14 @@ public class Game3Page : Page
 
     IEnumerator StartTimer()
     {
+        timer = 50;
         while (timerStart)
         {
             timerText.text = timer.ToString();
             yield return new WaitForSeconds(1f);
 
             timer--;
-            if(timer == 0) 
+            if(timer < 1) 
             {
                 timerStart = false;
                 Level3Controller.Instance.GameOver(); 

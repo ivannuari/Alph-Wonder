@@ -87,10 +87,13 @@ public class ResultPage : Page
         int poin = Level1Controller.Instance.GetScore();
         int level = Level1Controller.Instance.GetLevel();
 
-        int star = 3;
+        int star = poin;
         StartCoroutine(SetStars(star));
 
-        GameManager.Instance.levelData1.Save(level, 3);
+        int sc = poin > 2 ? 100 : 0;
+        resultText.text = $"{sc}%";
+
+        GameManager.Instance.levelData1.Save(level, star);
     }
 
     private void SetLevel2()
@@ -111,6 +114,20 @@ public class ResultPage : Page
         GameManager.Instance.levelData2.Save(level, star);
     }
 
+    private void SetLevel3()
+    {
+        int poin = Level3Controller.Instance.GetScore();
+        int level = Level3Controller.Instance.GetLevel();
+
+        int star = poin;
+        StartCoroutine(SetStars(star));
+
+        int sc = poin > 2 ? 100 : 0;
+        resultText.text = $"{sc}%";
+
+        GameManager.Instance.levelData3.Save(level, star);
+    }
+
     IEnumerator SetStars(int star)
     {
         foreach (var item in allStars)
@@ -124,16 +141,5 @@ public class ResultPage : Page
             allStars[i].gameObject.SetActive(true);
             GameManager.Instance.GetSound().PlaySound("Star");
         }
-    }
-
-    private void SetLevel3()
-    {
-        int poin = Level3Controller.Instance.GetScore();
-        int level = Level3Controller.Instance.GetLevel();
-
-        int star = poin;
-        StartCoroutine(SetStars(star));
-
-        GameManager.Instance.levelData3.Save(level, star);
     }
 }
