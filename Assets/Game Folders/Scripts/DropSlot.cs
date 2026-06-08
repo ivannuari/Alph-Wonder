@@ -9,6 +9,7 @@ public class DropSlot : MonoBehaviour, IDropHandler
     [SerializeField] private Image colorImage;
 
     public string key;
+    public bool isFilled = false;
 
     private GameObject letterObj;
     private Animator _anim;
@@ -16,6 +17,7 @@ public class DropSlot : MonoBehaviour, IDropHandler
     private void OnEnable()
     {
         _anim = GetComponent<Animator>();
+        isFilled = false;
     }
 
     public void Setup(LetterColor color,string k)
@@ -73,8 +75,10 @@ public class DropSlot : MonoBehaviour, IDropHandler
             // kirim jawaban ke controller
             Level3Controller.Instance.AddAnswer(letter.text.text);
 
+            isFilled = true;
             // 🔥 cek apakah semua slot sudah terisi
             Level3Controller.Instance.CheckAllFilled();
+
         }
         else
         {

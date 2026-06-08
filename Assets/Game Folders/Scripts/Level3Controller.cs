@@ -18,6 +18,7 @@ public class Level3Controller : MonoBehaviour
 
     public event Action<DataSoalLevel3> OnLevelChanged;
     public event Action OnGameReseted;
+    public event Action OnGameOver;
 
     private void Awake()
     {
@@ -46,10 +47,13 @@ public class Level3Controller : MonoBehaviour
 
         foreach (var slot in allSlots)
         {
-            if (slot.transform.childCount == 0)
+            if (slot.gameObject.activeInHierarchy)
             {
-                allFilled = false;
-                break;
+                if (!slot.isFilled)
+                {
+                    allFilled = false;
+                    return;
+                }
             }
         }
 
@@ -76,16 +80,15 @@ public class Level3Controller : MonoBehaviour
 
         if (result.Equals(correctAnswer))
         {
-            //Debug.Log("✅ Jawaban Benar!");
             poin = 3;
             StartCoroutine(ShowResult());
         }
         else
         {
             GameOver();
-            
-            //Debug.Log("❌ Jawaban Salah!");
         }
+
+        OnGameOver?.Invoke();
     }
 
     IEnumerator ShowResult()

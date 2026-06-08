@@ -15,12 +15,14 @@ public class DraggableLetter : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
     private Vector3 startPosition;
     private Animator _anim;
+    private CanvasManager _canvasManager;
 
     void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
         _anim = GetComponent<Animator>();
+        _canvasManager = GetComponentInParent<CanvasManager>();
 
         startPosition = transform.position;
     }
@@ -38,6 +40,7 @@ public class DraggableLetter : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     private void Instance_OnLevelChanged(DataSoalLevel3 data)
     {
         transform.parent = null;
+        transform.SetParent(_canvasManager.transform);
         transform.position = startPosition;
     }
 

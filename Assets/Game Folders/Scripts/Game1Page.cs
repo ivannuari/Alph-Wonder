@@ -18,9 +18,6 @@ public class Game1Page : Page
     [SerializeField] private RectTransform contentArea;
     [SerializeField] private ColorDot colorDotPrefab;
 
-    [SerializeField] private float minDistance = 80f; // jarak minimal antar dot
-    [SerializeField] private int maxTries = 50; // biar gak infinite loop
-
     [SerializeField] private string soundId;
     [SerializeField] private float soundDelay;
 
@@ -36,6 +33,7 @@ public class Game1Page : Page
         timer = 50;
         timerStart = true;
         countDownRoutine = StartCoroutine(StartTimer());
+        Level1Controller.Instance.ResetSoal();
     }
 
     IEnumerator StartTimer()

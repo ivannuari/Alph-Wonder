@@ -66,12 +66,14 @@ public class Level1Controller : MonoBehaviour
 
     private void CheckAnswer(LetterColor endColor)
     {
-        if (allJawabans.Count < 3) { return; }
+        if (allJawabans.Count != 3) { return; }
 
         allJawabans.Add(endColor);
 
         if (allJawabans.Count < dataSoal[level].colors.Length)
+        {
             return;
+        }
 
         jawaban = allJawabans.ToArray();
 

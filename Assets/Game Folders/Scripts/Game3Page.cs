@@ -36,12 +36,28 @@ public class Game3Page : Page
     private void OnEnable()
     {
         Level3Controller.Instance.OnLevelChanged += Instance_OnLevelChanged;
+        Level3Controller.Instance.OnGameOver += StopTimer;
+
         ResetLayout();
 
         timerStart = true;
         countDownRoutine = StartCoroutine(StartTimer());
 
         Instance_OnLevelChanged(Level3Controller.Instance.GetLevelData());
+    }
+
+    private void OnDisable()
+    {
+        StopTimer();
+        Level3Controller.Instance.OnLevelChanged -= Instance_OnLevelChanged;
+        Level3Controller.Instance.OnGameOver -= StopTimer;
+    }
+
+    void StopTimer()
+    {
+        StopCoroutine(countDownRoutine);
+        timer = 50;
+        timerStart = false;
     }
 
     IEnumerator StartTimer()
@@ -70,13 +86,6 @@ public class Game3Page : Page
 
             item.ReturnToStart();
         }
-    }
-
-    private void OnDisable()
-    {
-        timerStart = false;
-        StopCoroutine(countDownRoutine);
-        Level3Controller.Instance.OnLevelChanged -= Instance_OnLevelChanged;
     }
 
     private void Instance_OnLevelChanged(DataSoalLevel3 data)

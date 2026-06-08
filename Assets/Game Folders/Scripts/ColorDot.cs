@@ -12,9 +12,14 @@ public class ColorDot : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public string key;
     private Animator _anim;
 
-    private void OnEnable()
+    private void Awake()
     {
         _anim = GetComponent<Animator>();
+    }
+
+    private void OnEnable()
+    {
+        isConnect = false;
     }
 
     public void SetColor(LetterColor letterColor,string k)

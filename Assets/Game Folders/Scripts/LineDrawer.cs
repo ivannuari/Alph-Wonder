@@ -63,6 +63,11 @@ public class LineDrawer : MonoBehaviour
             ResetLine();
             return;
         }
+        else
+        {
+            Debug.Log($"CHECK {endDot.color}");
+            currentLine.endColor = endDot.color;
+        }
 
         currentLine.SetPosition(
             startDot.GetUIPos(canvasRect),
