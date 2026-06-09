@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GaweDeweStudio;
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -30,11 +31,26 @@ public class DraggableLetter : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     private void OnEnable()
     {
         Level3Controller.Instance.OnLevelChanged += Instance_OnLevelChanged;
+        GameManager.Instance.OnStateChanged += Instance_OnStateChanged;
     }
 
     private void OnDisable()
     {
         Level3Controller.Instance.OnLevelChanged -= Instance_OnLevelChanged;
+        GameManager.Instance.OnStateChanged -= Instance_OnStateChanged;
+    }
+
+    private void Instance_OnStateChanged(GameState newState)
+    {
+        if(newState == GameState.Result)
+        {
+            gameObject.SetActive(false);
+        }
+
+        if(newState == GameState.Game || newState == GameState.Level3)
+        {
+            gameObject.SetActive(true);
+        }
     }
 
     private void Instance_OnLevelChanged(DataSoalLevel3 data)

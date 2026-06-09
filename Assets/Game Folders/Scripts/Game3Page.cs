@@ -81,6 +81,7 @@ public class Game3Page : Page
     {
         foreach (var item in allDraggableLetter) 
         {
+            item.gameObject.SetActive(true);
             item.transform.parent = null;
             item.transform.SetParent(transform, true);
 
