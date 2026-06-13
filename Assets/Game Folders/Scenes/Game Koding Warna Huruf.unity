@@ -3412,6 +3412,7 @@ MonoBehaviour:
   slotColor: 0
   colorImage: {fileID: 199967995}
   key: 
+  isFilled: 0
 --- !u!95 &526033742
 Animator:
   serializedVersion: 7
@@ -4159,12 +4160,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 742ab7a8dccc8d848a3ccbcf5a83b2a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Level3Controller
-  jawaban: 
   allSlots:
   - {fileID: 526033741}
   - {fileID: 1178288062}
   - {fileID: 1207055078}
   - {fileID: 1120292752}
+  - {fileID: 917043720}
   dataSoal:
   - word: KUDA
     colors: 02000000000000000500000003000000
@@ -5019,6 +5020,7 @@ MonoBehaviour:
   slotColor: 0
   colorImage: {fileID: 2004060926}
   key: 
+  isFilled: 0
 --- !u!114 &917043721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5714,6 +5716,7 @@ MonoBehaviour:
   slotColor: 0
   colorImage: {fileID: 33847104}
   key: 
+  isFilled: 0
 --- !u!95 &1120292753
 Animator:
   serializedVersion: 7
@@ -6044,6 +6047,7 @@ MonoBehaviour:
   slotColor: 0
   colorImage: {fileID: 215833882}
   key: 
+  isFilled: 0
 --- !u!95 &1178288063
 Animator:
   serializedVersion: 7
@@ -6296,6 +6300,7 @@ MonoBehaviour:
   slotColor: 0
   colorImage: {fileID: 1324171467}
   key: 
+  isFilled: 0
 --- !u!95 &1207055079
 Animator:
   serializedVersion: 7

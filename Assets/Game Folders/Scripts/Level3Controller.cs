@@ -8,7 +8,6 @@ public class Level3Controller : MonoBehaviour
 {
     public static Level3Controller Instance;
 
-    public string jawaban;
     [SerializeField] private List<DropSlot> allSlots;
 
     public DataSoalLevel3[] dataSoal;
@@ -32,7 +31,7 @@ public class Level3Controller : MonoBehaviour
 
     public void AddAnswer(string n)
     {
-        jawaban += n;
+
     }
 
     public void SetLevel(int level)
